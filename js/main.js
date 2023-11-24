@@ -22,16 +22,21 @@ formEl.addEventListener("submit", (event) => {
   console.log("mainEmployeeArr ===", mainEmployeeArr);
 });
 
-// const em1 = new Employee('James', 'Bond');
-// console.log('em1 ===', em1);
-const wor1 = new MyWorker("Mike", "Kurt", 10);
-const wor2 = new MyWorker("James", "Bond", 15);
-console.log("wor1 ===", wor1);
+const darbuotojai = [
+  new MyWorker("James", "Bond", 10),
+  new MyWorker("Jane", "Dow", 15),
+  new MyWorker("Mike", "Tyson", 25),
+  new Freelancer("Serbentautas", "Bordiuras"),
+  new Freelancer("Mark", "brown"),
+  new Freelancer("Ana", "Marie"),
+];
+console.log("darbuotojai ===", darbuotojai);
+//darbuotojai dirba darbo laika
+darbuotojai[0].work(800);
+darbuotojai[1].work(100);
+darbuotojai[2].work(160);
 
-const free1 = new Freelancer("Jane", "Dow");
-console.log("free1 ===", free1);
-free1.printFullName();
-
+//sukuriami darbai freelanceriams
 const jobsArr = [
   new Job("Footeris", 200),
   new Job("Headeris", 300),
@@ -40,7 +45,38 @@ const jobsArr = [
   new Job("Email", 100),
   new Job("Form", 140),
 ];
-//free1 freelanceriui priskiriu Headeris darbas
-free1.assignJob(jobsArr[1]);
-free1.assignJob(jobsArr[0]);
-// free1.assignJob({ title: "labai gerai", pinigu: 10000 });
+
+//freelanceriam priskiriami darbai
+darbuotojai[3].assignJob(jobsArr[0]);
+darbuotojai[3].assignJob(jobsArr[1]);
+darbuotojai[3].assignJob(jobsArr[2]);
+darbuotojai[4].assignJob(jobsArr[3]);
+darbuotojai[4].assignJob(jobsArr[4]);
+
+// freelanceriai atlieka darbus
+darbuotojai[3].completeAJob(jobsArr[2].id);
+darbuotojai[4].completeAJob(jobsArr[3].id);
+darbuotojai[4].completeAJob(jobsArr[4].id);
+// console.log("darbuotojai[3] ===", darbuotojai[3]);
+// console.log("darbuotojai[4] ===", darbuotojai[4]);
+
+//norim atspauzdinti su konsole
+//'James Bond ismoketi 100 eur.
+
+//sukti cikla per darbuotojus
+// su printFullName gaunam varda ir pavarde
+//su calcPay gaunam alga
+console.log("-------------");
+// darbuotojai.forEach((emplObj) => {
+//   emplObj.printFullName();
+//   let alga = emplObj.calcPay();
+//   console.log("alga ====", alga);
+// });
+const algalapiai = darbuotojai.map((emplObj) => {
+  return {
+    name: emplObj.printFullName(),
+    pay: emplObj.calcPay(),
+  };
+});
+
+// { name: 'james Band', pay: 400}

@@ -2,7 +2,7 @@
 console.log("Job.js file was loaded");
 
 class Job {
-  //pridedama prie pacios klases o ne prie individualaus objekto
+  // pridedama prie pacios klases o ne prie individualaus objekto
   static count = 0;
   id;
   title;
@@ -16,13 +16,17 @@ class Job {
     this.#done = false;
   }
 
-  //kai norim uzbaigti darba
+  // getteris done statusui
+  get done() {
+    return this.#done;
+  }
+
+  // kai norim uzbaigti darba
   finishJob() {
     this.#done = true;
   }
 }
 
-// const jobsArr = [new Job("Footeris", 200), new Job("Headeris", 200)];
-// console.log("jobsArr ===", jobsArr);
-
-// console.log("Job.count ===", Job.count);
+// const jobsArr = [new Job('Footeris', 200), new Job('Headeris', 300)];
+// console.log('jobsArr ===', jobsArr);
+// console.log('Job.count ===', Job.count);

@@ -1,9 +1,6 @@
 "use strict";
 console.log("StudentClass.js file was loaded");
 
-("use strict");
-console.log("StudentClass.js file was loaded");
-
 class Student {
   // privati savybe, nepasiekiam is uz klase vidaus ribu
   #mathMarks;

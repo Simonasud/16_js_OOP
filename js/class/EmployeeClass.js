@@ -9,7 +9,9 @@ class Employee {
   }
 
   printFullName() {
-    console.log(`${this.firstName} ${this.lastName}`);
+    const prisistatymas = `${this.firstName} ${this.lastName}`;
+    console.log(prisistatymas);
+    return prisistatymas;
   }
 
   // imituojam abstakcia klase

@@ -17,11 +17,11 @@ class MyWorker extends Employee {
 
   // metoda calPay
   calcPay() {
-    console.log("skaiciuojam alga");
-    //paskaiciuoti kiek gaunasi isdirbtas val padauginus is valandinio
+    // console.log('skaiciuojam alga');
+    // paskaiciuoti kiek gaunasi isdirbtas val padauginus is valandinio
     const alga = this.#hoursWorked * this.#hourlyPay;
-    console.log(`-- ${this.firstName} ismketi ${alga.toFixed(2)} eur`);
-    //nunulinti valandas
+    // console.log(`-- ${this.firstName} ismoketi ${alga.toFixed(2)}eur`);
+    // nunulinti valandas
     this.#hoursWorked = 0;
     return alga;
   }

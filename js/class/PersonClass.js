@@ -1,6 +1,3 @@
-"use strict";
-console.log("PersonClass.js file was loaded");
-
 class Person {
   // spec funkcija kuri yra paleidzima kai sukuriamas objektas
   constructor(argName, argAge, argTown, argCar) {
