@@ -1,29 +1,29 @@
 "use strict";
-console.log("EmployeeClass.js file was loaded");
+console.log("paveldimumas.js file was loaded");
 
 class Employee {
   firstName;
   lastName;
-
   constructor(argName, argSurname) {
     this.firstName = argName;
     this.lastName = argSurname;
   }
+
   printFullName() {
     console.log(`${this.firstName} ${this.lastName}`);
   }
-  //imituojam abstrakcia klase
+
+  // imituojam abstakcia klase
   calcPay() {
     throw new Error("reikia aprasyti calcPay");
   }
 }
 
-//pasako is ko paveldi
 class Worker extends Employee {
   hoursWorked = 0;
   hourlyPay;
   constructor(name, lastName, dollarPerHour) {
-    //iskviesti tevines klases konstruktoriu
+    // iskviesti tevines klases konstukroriu
     super(name, lastName);
     this.hourlyPay = dollarPerHour;
   }
@@ -32,22 +32,22 @@ class Worker extends Employee {
 class TownWorker extends Worker {
   town;
   constructor(vardas, pavarde, valandinis, miestas) {
-    //tevines klases konstruktorius
+    // iskviesti tevines klases konstukroriu
     super(vardas, pavarde, valandinis);
     this.town = miestas;
   }
 }
 
-// sukurti TownWorker clase
-//ta klase praplecia Worker klase
-//sukurdami nauja TownWorker papildomai pridesime miesta
+// sukurti TownWorker clase,
+// praplecia Worker klase
+// sukurdami nauja TownWorkeri papildomai pridesim miesta
 
 const em1 = new Employee("James", "Bond");
 const wor1 = new Worker("Mike", "Kurt", 10);
-const tw1 = new TownWorker("Simona", "Sima", 10, "Silute");
+const wor2 = new TownWorker("Jane", "Dow", 12, "Kaunas");
 console.log("em1 ===", em1);
 em1.printFullName();
 console.log("wor1 ===", wor1);
 wor1.printFullName();
-console.log("tw1 ===", tw1);
-tw1.printFullName();
+console.log("wor2 ===", wor2);
+wor2.printFullName();
